@@ -15,6 +15,8 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/client": "^6.28.4",
+    "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.82.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
