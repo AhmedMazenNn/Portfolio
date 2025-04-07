@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './about.scss';
 import { urlFor, client } from '../../client';
 import AppWrap from '../../wrapper/AppWrap';
-
+import MotionWrap from '../../wrapper/MotionWrap';
 // eslint-disable-next-line react-refresh/only-export-components
 function About() {
   const MotionDiv = motion.div; 
@@ -49,4 +49,8 @@ function About() {
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
-export default AppWrap(About, 'about');
+export default AppWrap(
+  MotionWrap(About, 'app__about'),
+  'about',
+  'app__whitebg',
+);
