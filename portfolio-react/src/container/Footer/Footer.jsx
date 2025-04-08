@@ -16,22 +16,31 @@ function Footer() {
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setError(''); // Clear error on typing
   };
 
   const handleSubmit = () => {
+    // Simple validation
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setError('Please fill in all fields before submitting.');
+      return;
+    }
+
     setLoading(true);
     const contact = {
       _type: 'contact',
-      name: name,
-      email: email,
-      message: message
+      name,
+      email,
+      message
     };
+
     client.create(contact).then(() => {
       setLoading(false);
       setIsFormSubmitted(true);
@@ -79,11 +88,13 @@ function Footer() {
             <textarea
               className="p-text"
               placeholder="Your Message"
-              value={message}
               name="message"
+              value={message}
               onChange={handleChangeInput}
+              required
             />
           </div>
+          {error && <p className="error-text" style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
           <button type="button" className="p-text" onClick={handleSubmit}>
             {!loading ? 'Send Message' : 'Sending...'}
           </button>
@@ -96,10 +107,9 @@ function Footer() {
     </>
   );
 }
-
 // eslint-disable-next-line react-refresh/only-export-components
 export default AppWrap(
   MotionWrap(Footer, 'app__footer'),
   'contact',
-  'app__whitebg'
+  'app__primarybg'
 );

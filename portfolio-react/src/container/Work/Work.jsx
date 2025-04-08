@@ -46,7 +46,7 @@ function Work() {
       </h2>
 
       <div className="app__work-filter">
-        {['Full stack Development', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
+        {['Full stack Web Sites', 'Front End Web Sites', 'React JS', 'All'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
