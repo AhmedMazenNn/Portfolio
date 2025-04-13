@@ -46,6 +46,15 @@ function Header() {
           >
             Hire Me
           </a>
+          <a 
+          href="/CV.pdf"
+          download="CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cv-btn"
+          >
+            Download CV
+          </a>
         </div>
       </motion.div>
 

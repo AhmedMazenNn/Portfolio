@@ -1,3 +1,6 @@
+@use "sass:color";
+
+
 #home {
   position: relative;
   background: url("../../assets/bgIMG.png");
@@ -35,7 +38,14 @@
     padding: 6rem 1rem 2rem;
   }
 }
+#profile{
+  position: relative;
+  right: 85px;
 
+  @media screen and (max-width: 768px) {
+    right: 65px;
+  }
+}
 .app__header-info {
   flex: 0.65;
   display: flex;
@@ -64,7 +74,24 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background-color: darken(#f05656, 10%);
+    background-color: color.adjust(#f05656, $lightness: -10%);
+    transform: scale(1.05);
+  }
+}
+.cv-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background-color: var(--white-color);
+  color: var(--secondary-color);
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: color.adjust(#f4c63e, $lightness: -10%);
     transform: scale(1.05);
   }
 }
