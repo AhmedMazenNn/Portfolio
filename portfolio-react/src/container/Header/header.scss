@@ -40,10 +40,20 @@
 }
 #profile{
   position: relative;
-  right: 85px;
+  bottom: 85px;
+  width: 70%;
+  margin: 70px auto;
 
   @media screen and (max-width: 768px) {
-    right: 65px;
+    margin: 135px 35px auto;
+  }
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    margin: 135px 0 auto;
+    
   }
 }
 .app__header-info {
