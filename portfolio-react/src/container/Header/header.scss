@@ -56,6 +56,29 @@
     
   }
 }
+.loader {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader span {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ccc;
+  border-top-color: #313bac;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .app__header-info {
   flex: 0.65;
   display: flex;
